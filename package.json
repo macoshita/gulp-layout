@@ -1,0 +1,38 @@
+{
+  "name": "gulp-layout",
+  "version": "1.0.0",
+  "description": "Gulp plugin to apply a defferent template for each file (like a jekyll)",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "consolidate": "^0.11.0",
+    "gulp-util": "^3.0.3",
+    "through2": "^0.6.3"
+  },
+  "devDependencies": {
+    "chai": "^2.0.0",
+    "ejs": "^2.3.1",
+    "jade": "^1.9.2",
+    "lodash": "^3.3.0",
+    "mocha": "^2.1.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/macoshita/gulp-layout.git"
+  },
+  "keywords": [
+    "gulp",
+    "jekyll"
+  ],
+  "author": "macoshita",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/macoshita/gulp-layout/issues"
+  },
+  "homepage": "https://github.com/macoshita/gulp-layout"
+}
