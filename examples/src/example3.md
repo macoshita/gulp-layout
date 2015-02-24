@@ -1,7 +1,6 @@
 ---
-title: Hello FrontMatter & Markdown
+title: Hello World
 layout: post.jade
 ---
 
-- apple
-- orange
+gulp

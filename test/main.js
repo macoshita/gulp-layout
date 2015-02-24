@@ -14,6 +14,28 @@ var makeSrc = function(options) {
 };
 
 describe('gulp-layout', function() {
+  it('should throw error if not select engine', function(done) {
+    var src = makeSrc();
+
+    var myLayout = layout({
+      title: 'Test',
+      layout: 'test/fixtures/layout' // not select engine
+    });
+
+    myLayout.on('error', function(err) {
+      expect(err).to.exist;
+      expect(err.message).to.contain('Please select template engine');
+      expect(err.fileName).to.equals('test/fixtures/entry.html');
+      done();
+    });
+
+    myLayout.on('data', function(file) {
+      done(new Error('should not write a contents'));
+    });
+
+    myLayout.write(src);
+  });
+
   it('should throw error if engine is not exist', function(done) {
     var src = makeSrc();
 

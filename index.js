@@ -3,12 +3,13 @@ var consolidate = require('consolidate');
 var through = require('through2');
 var gutil = require('gulp-util');
 var PluginError = gutil.PluginError;
+var PLUGIN_NAME = 'gulp-layout';
 
 module.exports = function(options) {
   'use strict';
 
   options = options || {};
-  
+
   var requireOk = {};
 
   return through.obj(function(file, enc, cb) {
@@ -18,7 +19,7 @@ module.exports = function(options) {
     }
 
     if (file.isStream()) {
-      cb(new PluginError('gulp-layout', 'Streaming not supported.'));
+      cb(new PluginError(PLUGIN_NAME, 'Streaming not supported.'));
       return;
     }
 
@@ -35,12 +36,12 @@ module.exports = function(options) {
     }
 
     if (!engine) {
-      cb(null, file);
+      cb(new PluginError(PLUGIN_NAME, 'Please select template engine in options ("engine" or extension of "layout")', {fileName: file.path}));
       return;
     }
 
     if (!consolidate[engine]) {
-      cb(new PluginError('gulp-layout', 'Template engine "' + engine + '" is not supported.', {fileName: file.path}));
+      cb(new PluginError(PLUGIN_NAME, 'Template engine "' + engine + '" is not supported.', {fileName: file.path}));
       return;
     }
 
@@ -49,7 +50,7 @@ module.exports = function(options) {
         require(engine);
         requireOk[engine] = true;
       } catch (err) {
-        cb(new PluginError('gulp-layout', 'Template engine "' + engine + '" is not installed.', {fileName: file.path}));
+        cb(new PluginError(PLUGIN_NAME, 'Template engine "' + engine + '" is not installed.', {fileName: file.path}));
         return;
       }
     }
@@ -58,7 +59,7 @@ module.exports = function(options) {
 
     consolidate[engine](data.layout, data, function(err, html) {
       if (err) {
-        cb(new PluginError('gulp-layout', err, {fileName: file.path}));
+        cb(new PluginError(PLUGIN_NAME, err, {fileName: file.path}));
         return;
       }
       file.contents = new Buffer(html);

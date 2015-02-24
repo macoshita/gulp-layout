@@ -19,11 +19,10 @@ gulp.task('example1', function() {
     .pipe(gulp.dest('./dist'));
 });
 
-// Switch layout files for each content (set properties in the front-matter)
+// Switch layout files for each content (use gulp-front-matter)
 // - example2-1: using post.jade
 // - example2-2: using post.ejs
 // - example2-3: using post.html ('engine' property = 'ejs')
-// If you will use gulp-front-matter, this example is useful.
 gulp.task('example2', function() {
   return gulp.src('./src/example2-*.html')
     .pipe(frontMatter())
@@ -33,7 +32,7 @@ gulp.task('example2', function() {
     .pipe(gulp.dest('./dist'));
 });
 
-// If you will write a content by markdown (set properties in the front-matter):
+// Like a jekyll (use gulp-markdown):
 gulp.task('example3', function() {
   return gulp.src('./src/example3.md')
     .pipe(frontMatter())
