@@ -5,7 +5,7 @@ Gulp plugin to switch layout files for each content (like a [jekyll](http://jeky
 ## Install
 
 ```
-npm install macoshita/gulp-layout
+npm install gulp-layout
 ```
 
 ## Usage
