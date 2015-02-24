@@ -8,6 +8,8 @@ module.exports = function(options) {
   'use strict';
 
   options = options || {};
+  
+  var requireOk = {};
 
   return through.obj(function(file, enc, cb) {
     if (file.isNull()) {
@@ -35,6 +37,21 @@ module.exports = function(options) {
     if (!engine) {
       cb(null, file);
       return;
+    }
+
+    if (!consolidate[engine]) {
+      cb(new PluginError('gulp-layout', 'Template engine "' + engine + '" is not supported.', {fileName: file.path}));
+      return;
+    }
+
+    if (!requireOk[engine]) {
+      try {
+        require(engine);
+        requireOk[engine] = true;
+      } catch (err) {
+        cb(new PluginError('gulp-layout', 'Template engine "' + engine + '" is not installed.', {fileName: file.path}));
+        return;
+      }
     }
 
     data.contents = file.contents;

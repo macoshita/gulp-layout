@@ -31,7 +31,9 @@
   },
   "keywords": [
     "gulp",
-    "jekyll"
+    "gulpplugin",
+    "jekyll",
+    "layout"
   ],
   "author": "macoshita",
   "license": "MIT",
