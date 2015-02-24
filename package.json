@@ -1,7 +1,7 @@
 {
   "name": "gulp-layout",
-  "version": "1.0.0",
-  "description": "Gulp plugin to apply a defferent template for each file (like a jekyll)",
+  "version": "0.0.1",
+  "description": "Gulp plugin to switch layout files for each content (like a jekyll)",
   "main": "index.js",
   "directories": {
     "test": "test"
