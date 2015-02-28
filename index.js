@@ -29,6 +29,11 @@ module.exports = function(options) {
       data = options(file);
     }
 
+    if (!data || !data.layout) {
+      cb(null, file);
+      return;
+    }
+
     var engine = data.engine;
 
     if (!engine) {

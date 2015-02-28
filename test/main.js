@@ -105,6 +105,31 @@ describe('gulp-layout', function() {
     myLayout.end();
   });
 
+  it('should do nothing if not set "layout"', function(done) {
+    var src = makeSrc();
+
+    var myLayout = layout({
+      title: 'Test'
+      // layout property is not set
+    });
+
+    myLayout.on('error', function(err) {
+      expect(err).to.exist;
+      done(err);
+    });
+
+    myLayout.on('data', function(file) {
+      expect(file).to.exist;
+      expect(file.contents).to.exist;
+      var html = file.contents.toString();
+      expect(html).to.contain('<p>Hello</p>');
+      done();
+    });
+
+    myLayout.write(src);
+    myLayout.end();
+  });
+
   it('should use the specified template', function(done) {
     var src = makeSrc();
 
