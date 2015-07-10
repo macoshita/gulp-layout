@@ -47,7 +47,7 @@ h1= title
 
 ### Like a jekyll
 
-Use [gulp-markdown](https://github.com/sindresorhus/gulp-markdown) & [gulp-fornt-matter](https://github.com/lmtm/gulp-front-matter) (thanks!)
+Use [gulp-markdown](https://github.com/sindresorhus/gulp-markdown) & [gulp-front-matter](https://github.com/lmtm/gulp-front-matter) (thanks!)
 
 ```javascript
 var gulp = require('gulp');
