@@ -20,7 +20,7 @@
     "gulp-markdown": "^1.0.0",
     "lodash": "^3.3.0",
     "mocha": "^2.1.0",
-    "pug": "^2.0.0-alpha6"
+    "pug": "^2.0.0-beta6"
   },
   "scripts": {
     "test": "mocha"
