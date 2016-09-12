@@ -14,13 +14,13 @@ gulp.task('example1', function() {
   return gulp.src('./src/example1.html')
     .pipe(layout({
       title: 'Hello World',
-      layout: 'post.jade'
+      layout: 'post.pug'
     }))
     .pipe(gulp.dest('./dist'));
 });
 
 // Switch layout files for each content (use gulp-front-matter)
-// - example2-1: using post.jade
+// - example2-1: using post.pug
 // - example2-2: using post.ejs
 // - example2-3: using post.html ('engine' property = 'ejs')
 gulp.task('example2', function() {

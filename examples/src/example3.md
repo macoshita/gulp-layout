@@ -1,6 +1,6 @@
 ---
 title: Hello World
-layout: post.jade
+layout: post.pug
 ---
 
 gulp

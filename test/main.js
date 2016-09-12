@@ -88,7 +88,7 @@ describe('gulp-layout', function() {
 
     var myLayout = layout({
       title: 'Test',
-      layout: 'dummy.jade' // not exist
+      layout: 'dummy.pug' // not exist
     });
 
     myLayout.on('error', function(err) {
@@ -135,7 +135,7 @@ describe('gulp-layout', function() {
 
     var myLayout = layout({
       title: 'Test',
-      layout: 'test/fixtures/layout.jade'
+      layout: 'test/fixtures/layout.pug'
     });
 
     myLayout.on('error', function(err) {
@@ -187,7 +187,7 @@ describe('gulp-layout', function() {
     var src = makeSrc({
       frontMatter: {
         title: 'Test',
-        layout: 'test/fixtures/layout.jade'
+        layout: 'test/fixtures/layout.pug'
       }
     });
 
