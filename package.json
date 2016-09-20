@@ -1,6 +1,6 @@
 {
   "name": "gulp-layout",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Gulp plugin to switch layout files for each content (like a jekyll)",
   "main": "index.js",
   "directories": {
