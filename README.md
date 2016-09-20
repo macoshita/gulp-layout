@@ -20,7 +20,7 @@ gulp.task('build', function() {
   return gulp.src('./src/test.html')
     .pipe(layout({
       title: 'Hello World',
-      layout: 'post.jade'
+      layout: 'post.pug'
     }))
     .pipe(gulp.dest('./dist'));
 });
@@ -32,9 +32,9 @@ gulp.task('build', function() {
 <p>gulp</p>
 ```
 
-(layout) post.jade:
+(layout) post.pug:
 
-```jade
+```pug
 h1= title
 |!= contents
 ```
@@ -71,15 +71,15 @@ gulp.task('build', function() {
 ```md
 ---
 title: Hello World
-layout: post.jade
+layout: post.pug
 ---
 
 gulp
 ```
 
-(layout) post.jade:
+(layout) post.pug:
 
-```jade
+```pug
 doctype html
 html
   head
